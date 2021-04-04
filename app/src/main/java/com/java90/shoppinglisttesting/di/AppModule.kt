@@ -7,6 +7,8 @@ import com.java90.shoppinglisttesting.data.local.ShoppingDao
 import com.java90.shoppinglisttesting.data.local.ShoppingDatabase
 import com.java90.shoppinglisttesting.data.remote.PixibayAPI
 import com.java90.shoppinglisttesting.other.Constants.BASE_URL
+import com.java90.shoppinglisttesting.repository.ShoppingRepository
+import com.java90.shoppinglisttesting.repository.ShoppingRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,5 +46,11 @@ object AppModule {
             .baseUrl(BASE_URL)
             .build()
             .create(PixibayAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideShoppingRepositoryImp(dao: ShoppingDao, api: PixibayAPI) : ShoppingRepository {
+        return ShoppingRepositoryImp(dao, api)
     }
 }
