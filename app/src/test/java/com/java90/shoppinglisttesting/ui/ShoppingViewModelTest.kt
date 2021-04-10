@@ -41,6 +41,18 @@ class ShoppingViewModelTest {
     }
 
     @Test
+    fun `given a url then current imageUrl observe it`() {
+        // Given
+        val pathUrl = "http//:www.instaleap.io"
+
+        // When
+        viewModel.serCurrentImageUrl(pathUrl)
+
+        // Then
+        assertThat(viewModel.currentImageUrl.getOrAwaitValueTest()).isEqualTo(pathUrl)
+    }
+
+    @Test
     fun `given shopping item with empty field, returns error`() {
         // Given
         viewModel.insertShoppingItem("name", "", "25.0")
