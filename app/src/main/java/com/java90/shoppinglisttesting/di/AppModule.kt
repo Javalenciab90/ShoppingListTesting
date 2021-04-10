@@ -24,13 +24,12 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideShoppingItemDatabase(@ApplicationContext context: Context) : RoomDatabase {
-        return Room.databaseBuilder(
+    fun provideShoppingItemDatabase(@ApplicationContext context: Context) =
+        Room.databaseBuilder(
             context,
             ShoppingDatabase::class.java,
             ShoppingDatabase.DATABASE_NAME
         ).build()
-    }
 
     @Singleton
     @Provides

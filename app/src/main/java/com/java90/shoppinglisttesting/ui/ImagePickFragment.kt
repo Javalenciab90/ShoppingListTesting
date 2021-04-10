@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.java90.shoppinglisttesting.databinding.FragmentImagePickBinding
 import com.java90.shoppinglisttesting.databinding.FragmentShoppingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ImagePickFragment : Fragment() {
 
     lateinit var viewModel: ShoppingViewModel
