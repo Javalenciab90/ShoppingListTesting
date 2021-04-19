@@ -72,12 +72,12 @@ class AddShoppingItemFragment : Fragment() {
             insertShoppingItemStatus.observe(viewLifecycleOwner, Observer {
                 it.getContentIfNotHandled()?.let { result ->
                     when (result.status) {
-                        Status.LOADING -> { }
+                        Status.LOADING -> { /* NO-DEVELOP*/ }
                         Status.SUCCESS -> {
                             Snackbar.make(binding.root, "Added shopping Item", Snackbar.LENGTH_LONG).show()
                             findNavController().popBackStack()
                         }
-                        Status.ERROR -> { }
+                        Status.ERROR -> { /* NO-DEVELOP*/ }
                     }
                 }
             })
