@@ -11,7 +11,7 @@ import com.java90.shoppinglisttesting.data.local.ShoppingItem
 import com.java90.shoppinglisttesting.databinding.ItemImageBinding
 import com.java90.shoppinglisttesting.databinding.ItemShoppingBinding
 
-class ShoppingItemAdapter() : ListAdapter<ShoppingItem, ShoppingItemAdapter.ShoppingItemViewHolder>(ShoppingItemDiffCallback()) {
+class ShoppingItemAdapter : ListAdapter<ShoppingItem, ShoppingItemAdapter.ShoppingItemViewHolder>(ShoppingItemDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoppingItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
